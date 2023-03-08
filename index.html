@@ -1,13 +1,9 @@
-<script>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Random Advice Slip</title>
+  </head>
+  <body>
+    <h1 style='text-align:center'>Random Advice Slip</h1>
+    <div id="advice-slip" class="advice-slip"></div>
 
-  async function getDog () {
-    	const req = await window.fetch('https://dog.ceo/api/breeds/image/random')
-    	const json = await req.json()
-      
-      const img = document.createElement ('img')
-      img.src = json.message
-    	document.body.appendChild(img)
-  }
-
-  window.addEventListener('load', getDog)
-</script>
