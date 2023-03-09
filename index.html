@@ -27,6 +27,16 @@
           adviceSlipDiv.innerHTML = adviceSlip;
         })
         .catch(error => console.error(error));
+      
+      const canvas = document.getElementById('myCanvas');
+      const context = canvas.getContext('2d');
+      const radius = 50;
+      const x = Math.random() * canvas.width;
+      const y = Math.random() * canvas.height;
+      context.beginPath();
+      context.arc(x, y, radius, 0, 2 * Math.PI);
+      context.fillStyle = randomColor ();
+      context.fill();
     </script>
   </body>
 </html>
