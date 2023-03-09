@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Random Advice Slip</title>
+    <title>Random Advice Slip by Miki Yang </title>
   </head>
   <body>
     <h1 style='text-align:center'>Random Advice Slip</h1>
     <div id="advice-slip" class="advice-slip"></div>
-
+		<canvas id="myCanvas"></canvas>
+   
     <script>
+      function randomColor () {
+        const r = Math.random() * 255
+        const g = Math.random() * 255 
+        const b = Math.random() * 255 
+        const color = `rgb(${r}, ${g}, ${b})`
+        return color
+      }
+      
       const apiUrl = 'https://api.adviceslip.com/advice';
 
       fetch(apiUrl)
