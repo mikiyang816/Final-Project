@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Random Advice Slip by Miki Yang </title>
+    <title>Tips to Have A Motivated Day at UChicago by Miki Yang </title>
   </head>
   <body>
-    <h1 style='text-align:center'>Random Advice Slip</h1>
+    <h1 style='text-align:center'>Tips to Have A Motivated Day at UChicago by Miki Yang</h1>
     <div id="advice-slip" class="advice-slip"></div>
-		<canvas id="myCanvas"></canvas>
-   
+    <canvas id="myCanvas"></canvas>
+
+    
     <script>
-      function randomColor () {
+      function randomColor() {
         const r = Math.random() * 255
-        const g = Math.random() * 255 
-        const b = Math.random() * 255 
+        const g = Math.random() * 255
+        const b = Math.random() * 255
         const color = `rgb(${r}, ${g}, ${b})`
         return color
       }
+
       
       const apiUrl = 'https://api.adviceslip.com/advice';
 
@@ -27,6 +29,7 @@
           adviceSlipDiv.innerHTML = adviceSlip;
         })
         .catch(error => console.error(error));
+
       
       const canvas = document.getElementById('myCanvas');
       const context = canvas.getContext('2d');
@@ -35,11 +38,27 @@
       const y = Math.random() * canvas.height;
       context.beginPath();
       context.arc(x, y, radius, 0, 2 * Math.PI);
-      context.fillStyle = randomColor ();
+      context.fillStyle = randomColor();
+      context.fill();
+
+      
+      const x1 = Math.random() * canvas.width;
+      const y1 = Math.random() * canvas.height;
+      const x2 = Math.random() * canvas.width;
+      const y2 = Math.random() * canvas.height;
+      const x3 = Math.random() * canvas.width;
+      const y3 = Math.random() * canvas.height;
+      context.beginPath();
+      context.moveTo(x1, y1);
+      context.lineTo(x2, y2);
+      context.lineTo(x3, y3);
+      context.closePath();
+      context.fillStyle = randomColor();
       context.fill();
     </script>
   </body>
 </html>
+
 
 <style>
   .advice-slip {
@@ -53,4 +72,11 @@
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
+
+  body {
+    background: linear-gradient(to bottom, white, skyblue);
+  }
 </style>
+
+
+
